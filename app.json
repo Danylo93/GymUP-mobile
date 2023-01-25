@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -16,7 +17,18 @@
         "expo-image-picker",
         {
           "photosPermission": "The app accesses your photos to let you share them with your friends."
+          
         }
+      ],
+
+      
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "production",
+          "smallIcons": ["./assets/icon.png"]
+        }
+        
       ]
     ],
     "updates": {
@@ -25,27 +37,36 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier" : "br.gymup.fwdigital"
+     
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
+      
+      
       "permissions": [
         "android.permission.RECORD_AUDIO"
       ],
       "package": "br.gymup.fwdigital",
-	  "versionCode": 3
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    
     "extra": {
       "eas": {
         "projectId": "4db3234b-ec53-43f4-a580-e77cf7c29515"
       }
+      
     }
+    
   }
+  
 }

@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "gymup",
+    "name": "GymUP",
     "slug": "gymup",
-    "version": "1.0.0",
+    "version": "3.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -36,7 +36,8 @@
       "permissions": [
         "android.permission.RECORD_AUDIO"
       ],
-      "package": "com.danylo.oliveira.gymup"
+      "package": "br.gymup.fwdigital",
+	  "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"

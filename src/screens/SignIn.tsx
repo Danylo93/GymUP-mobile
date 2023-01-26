@@ -1,4 +1,5 @@
 import { useNavigation } from '@react-navigation/native'
+
 import {
 	Center,
 	Heading,
@@ -8,11 +9,11 @@ import {
 	VStack,
 	useToast
 } from 'native-base'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
 import BackgroundImg from '@assets/background.png'
-import LogoSvg from '@assets/logo.svg'
+
 
 import { Button } from '@components/Button'
 import { Input } from '@components/Input'
@@ -20,20 +21,25 @@ import { Input } from '@components/Input'
 import { useAuth } from '@hooks/useAuth'
 import { AuthNavigatorRoutesProps } from '@routes/auth.routes'
 import { AppError } from '@utils/AppError'
+import OneSignal, {NotificationReceivedEvent} from 'react-native-onesignal'
 
 type FormData = {
 	email: string
 	password: string
 }
 
+
 export function SignIn() {
 	const [isLoading, setIsLoading] = useState(false)
-
 	const { singIn } = useAuth()
 	const navigation = useNavigation<AuthNavigatorRoutesProps>()
 	const toas = useToast()
+	
 
-	const {
+
+	//tagUserEmailCreate();
+
+		const {
 		control,
 		handleSubmit,
 		formState: { errors }
@@ -140,7 +146,9 @@ export function SignIn() {
 						onPress={handleNewAccount}
 					/>
 				</Center>
+				
 			</VStack>
+			
 		</ScrollView>
 	)
 }

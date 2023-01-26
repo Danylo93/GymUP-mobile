@@ -5,15 +5,16 @@ import { ScrollView } from 'react-native-virtualized-view'
 import { api } from '@services/api';
 import { AppError } from '@utils/AppError';
 import { ExerciseDTO } from '@dtos/ExerciseDTO';
-
 import { Group } from '@components/Group';
 import { HomeHeader } from '@components/HomeHeader';
 import { ExerciseCard } from '@components/ExerciseCard';
 
 import { AppNavigatorRoutesProps } from '@routes/app.routes';
 import { Loading } from '@components/Loading';
+import OneSignal, { NotificationReceivedEvent, OSNotification } from 'react-native-onesignal';
 
 export function Home() {
+
   const [isLoading, setIsLoading] = useState(false);
   const  [groupsLoading, setGroupsLoading] = useState(false);
   const  [exercisesLoading, setExercisesLoading] = useState(false);
@@ -81,6 +82,7 @@ export function Home() {
   )
 
   return (
+    <>
     <VStack flex={1}>
       <HomeHeader />
 
@@ -173,6 +175,11 @@ export function Home() {
       />
       
       </ScrollView>
+      
     </VStack>
+    
+    
+    </>
+    
   );
 }
